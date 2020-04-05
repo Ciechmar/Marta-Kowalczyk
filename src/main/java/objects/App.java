@@ -25,17 +25,22 @@ public class App {
         listaAnimali.add(new Dog());
 
 
-        dajGlosDlaTablicy(listaAnimali);
+        dajGlosDlaListy(listaAnimali);
+        dajGlosDlaTablicy(tablicaAnimali);
 
 
     }
 
-    public static void dajGlosDlaTablicy(List<Animal> zwierzat){
+    public static void dajGlosDlaTablicy(Animal[] zwierzat){
         for (Animal animal : zwierzat){
             animal.makeSound();
         }
     }
 
-
+    public static void dajGlosDlaListy(List<Animal> zwierzat){
+        for (Animal animal : zwierzat){
+            animal.makeSound();
+        }
+    }
 
 }
