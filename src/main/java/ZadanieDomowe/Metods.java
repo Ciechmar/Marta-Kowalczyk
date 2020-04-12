@@ -59,12 +59,39 @@ public class Metods {
         System.out.println("Rozmiar tablicy to: " + table.length);
     }
 
+    public void writeTable(int[][]table){
+        for (int i = 0; i <table.length ; i++) {
+            for (int j = 0; j <= 1 ; j++) {
+                System.out.print("  " + table[i][j] + "  | ");
+            }
+            System.out.println();
+        }
+        System.out.println("Rozmiar tablicy to: " + table.length);
+    }
+
+
     public String[] nameChange (String[] table){
         table[0] = "piotr";
         writeTable(table);
         return table;
     }
 
+    public void changeFirstLetter (String[] table){
+        for (int i = 0; i < table.length ; i++) {
+            char firstLetter = table[i].toUpperCase().charAt(0);
+            System.out.println( firstLetter + table[i].substring(1));
+        }
+    }
+
+    public int[][]tableSum (int[] table, int[] table2){
+        int[][]table3 = new int [table.length][2];
+        for (int i = 0; i < table.length ; i++) {
+            table3[i][0] = table[i];
+            table3[i][1] = table2[i];
+        }
+
+       return table3;
+    }
 
 
 }

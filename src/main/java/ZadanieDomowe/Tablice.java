@@ -18,6 +18,19 @@ public class Tablice {
         metods.sum(table, table2);
         metods.multiplication(table, table2);
         metods.writeTable(tableString);
+        metods.nameChange(tableString);
+        metods.changeFirstLetter(tableString);
+//        metods.usunElement() <-- Nie da rady usunąć komórki,
+//                              a jedynie zmienić jej zawartośc na pustą,
+//                              ale tablica nadal ma wyjściową ilośc elementów.
+
+
+       int[][]table3 = metods.tableSum(table,table2);
+       metods.writeTable(table3);
+
+
+
+
 
 
 
