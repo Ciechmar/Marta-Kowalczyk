@@ -1,6 +1,9 @@
 package ZadanieDomowe;
 
 
+import java.util.ArrayList;
+import java.util.function.ToDoubleBiFunction;
+
 public class Metods {
     public void average (int[] table){
         int suma = 0;
@@ -58,6 +61,13 @@ public class Metods {
         }
         System.out.println("Rozmiar tablicy to: " + table.length);
     }
+    public void writeTable(int[] table){
+        System.out.print("[ ");
+        for (int i = 0; i <table.length ; i++) {
+            System.out.print(table[i] + " ");
+        }
+        System.out.print("]");
+    }
 
     public void writeTable(int[][]table){
         for (int i = 0; i <table.length ; i++) {
@@ -92,6 +102,30 @@ public class Metods {
 
        return table3;
     }
+//ToDo:
+    public int[]tableSumNoReapet (int[] table, int[] table2){
+// Metoda wpisuje tylko nie powtórzone elementy do tablicy.
+
+        int [] table3 = new int [table.length];
+        
+
+
+
+        return table3;
+    }
+
+    public int[] reverseTable (int[] table){
+        int[] table2 = new int [table.length];
+        for (int i = 0; i < table.length ; i++) {
+            table2[table2.length-i-1] = table[i];
+        }
+        writeTable(table);
+        System.out.println();
+        writeTable(table2);
+        return table2;
+
+    }
+
 
 
 }

@@ -24,9 +24,11 @@ public class Tablice {
 //                              a jedynie zmienić jej zawartośc na pustą,
 //                              ale tablica nadal ma wyjściową ilośc elementów.
 
-
-       int[][]table3 = metods.tableSum(table,table2);
-       metods.writeTable(table3);
+        int[][]table3 = metods.tableSum(table,table2);
+        metods.writeTable(table3);
+//        int[]table4 = metods.tableSumNoReapet(table,table2);
+//        metods.writeTable(table4);
+        metods.reverseTable(table);
 
 
 
