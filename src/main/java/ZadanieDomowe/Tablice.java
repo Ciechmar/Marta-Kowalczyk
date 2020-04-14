@@ -26,9 +26,10 @@ public class Tablice {
 
         int[][]table3 = metods.tableSum(table,table2);
         metods.writeTable(table3);
-//        int[]table4 = metods.tableSumNoReapet(table,table2);
-//        metods.writeTable(table4);
+//        int[]table4 = metods.removeDuplicates(table);
         metods.reverseTable(table);
+        int[]table4 = metods.tableSumNoRepeat(table,table2);
+        metods.writeTable(table4);
 
 
 

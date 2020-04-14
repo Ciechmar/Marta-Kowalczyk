@@ -23,9 +23,11 @@ public class Ciągi {
 //        lista.remove(0);
 //        lista.add(444);
 //        System.out.println(lista);
+//
+//        System.out.println(sumaLiczbZListy(8, 1, 2));
+//        List <Integer> ciagi = new ArrayList<>();
 
-        System.out.println(sumaLiczbZListy(8, 1, 2));
-        List <Integer> ciagi = new ArrayList<>();
+        List<Integer> ciag = sumaLiczbZListy( 10,1,1);
 
 
     }
@@ -39,5 +41,14 @@ public class Ciągi {
 
         return ciag;
     }
+
+//    public static boolean sprawdzCzyCiagArytmetyczny (List<Integer> ciag){
+//        for (int i = 1; i < ciag.size() ; i++) {
+//            if(ciag.get(i - 1) + ciag.get(i + 1)/2 != ciag.get(i)){
+//                return false;
+//            }
+//            return true;
+//        }
+//    }
 
 }

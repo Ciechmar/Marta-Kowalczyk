@@ -2,7 +2,8 @@ package objects;
 
 public class TestyNaKotach {
     public static void main(String[] args) {
-        Cat pako = new Cat();
+        Cat pako = new Cat("Pako");
+        Cat filemon = Cat.stworzKota("Filemon");
         pako.eatMouse();
         pako.eatMouse();
         pako.eatMouse();
