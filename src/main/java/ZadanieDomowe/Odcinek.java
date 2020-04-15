@@ -30,7 +30,7 @@ public class Odcinek extends Punkt {
         for (int i = 0; i <dlugoscInt ; i++) {
             System.out.print("-");
         }
-        System.out.print("|");
+        System.out.print("|\n");
 
     }
 }

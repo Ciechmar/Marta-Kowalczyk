@@ -1,5 +1,6 @@
 package ZadanieDomowe;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,6 +39,14 @@ public class Regexy {
         System.out.println(isTelNumber(numberChain));
         System.out.println(isTelNumber(numberChainMinus));
         System.out.println(isTelNumber(numberDouble));
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj tekst:");
+        String tekst = scanner.nextLine();
+        System.out.println(removeWhite(tekst));
+
+
+
 
 
 
