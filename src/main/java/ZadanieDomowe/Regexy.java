@@ -7,10 +7,13 @@ public class Regexy {
     public static void main(String[] args) {
         String numberLetterChain = "kf4@$56nvsue^%48eriufn48";
         String numberChain = "78895478380239";
+        String numberFloat = "788954.78380239";
+        double numberDouble = 6554.783;
+
         String letterChain = "fuhrejdskncvdjf";
         String letterChain5 = "piecc";
         String sentencepl = "Nawet płonący żywy trup ma swoje jasne strony";
-        String sentence = "Zdanie bez polskich znakow";
+        String sentence = "Zdanie bez polskich znakow.";
         System.out.println(isNumber(numberChain));
         System.out.println(isNumber(numberLetterChain));
         System.out.println(isNumber(letterChain));
@@ -26,6 +29,11 @@ public class Regexy {
         System.out.println(isSentence(sentence));
         System.out.println(isSentence(sentencepl));
         System.out.println(isSentence(letterChain5));
+        System.out.println("Zad6");
+        System.out.println(isFloat(numberChain));
+        System.out.println(isFloat(numberFloat));
+        System.out.println(isFloat(numberDouble));
+
 
 
 
@@ -75,6 +83,21 @@ public class Regexy {
     public static boolean isSentence (String sentence){
         Pattern pattern = Pattern.compile("[A-Z]{1}\\w+(\\s\\w+)*\\.");
         Matcher matcher = pattern.matcher(sentence);
+        return matcher.matches();
+
+    }
+
+    public static boolean isFloat (double numb){
+        String number = String.valueOf(numb);
+        Pattern pattern = Pattern.compile("\\d+\\.\\d+");
+        Matcher matcher = pattern.matcher(number);
+        return matcher.matches();
+
+    }
+
+    public static boolean isFloat (String number){
+        Pattern pattern = Pattern.compile("\\d+\\.\\d+");
+        Matcher matcher = pattern.matcher(number);
         return matcher.matches();
 
     }
