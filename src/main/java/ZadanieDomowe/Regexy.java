@@ -6,7 +6,8 @@ import java.util.regex.Pattern;
 public class Regexy {
     public static void main(String[] args) {
         String numberLetterChain = "kf4@$56nvsue^%48eriufn48";
-        String numberChain = "78895478380239";
+        String numberChain = "501478963";
+        String numberChainMinus = "501-478-963";
         String numberFloat = "788954.78380239";
         double numberDouble = 6554.783;
 
@@ -33,6 +34,10 @@ public class Regexy {
         System.out.println(isFloat(numberChain));
         System.out.println(isFloat(numberFloat));
         System.out.println(isFloat(numberDouble));
+        System.out.println("Zad7");
+        System.out.println(isTelNumber(numberChain));
+        System.out.println(isTelNumber(numberChainMinus));
+        System.out.println(isTelNumber(numberDouble));
 
 
 
@@ -97,6 +102,27 @@ public class Regexy {
 
     public static boolean isFloat (String number){
         Pattern pattern = Pattern.compile("\\d+\\.\\d+");
+        Matcher matcher = pattern.matcher(number);
+        return matcher.matches();
+
+    }
+
+//    Sprawdź czy numer telefonu jest poprawny -może mieć format XXXXXXXXX lub XXX-XXX-XXX.
+
+    public static boolean isTelNumber(String number){
+
+        System.out.println(number);
+        Pattern pattern = Pattern.compile("[4-8][0-9]{2}\\-*[0-9]{3}\\-*[0-9]{3}");
+
+        Matcher matcher = pattern.matcher(number);
+        return matcher.matches();
+
+    }
+
+    public static boolean isTelNumber(double num){
+        String number = String.valueOf(num);
+        System.out.println(number);
+        Pattern pattern = Pattern.compile("[4-8][0-9]{8}");
         Matcher matcher = pattern.matcher(number);
         return matcher.matches();
 
