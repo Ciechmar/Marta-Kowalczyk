@@ -3,7 +3,7 @@ package ZadanieDomowe;
 
 public class Tablice {
     public static void main(String[] args) {
-        int[] table  = {6, 3, 5, 7, 1, 1, 7, 9};
+        int [] table  = {6, 3, 5, 7, 1, 1, 7, 9};
         int [] table2 = new int[table.length];
         int tableSize = table.length;
         for (int i = 0; i <tableSize ; i++) {
