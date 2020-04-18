@@ -58,4 +58,21 @@ public class InneDoPrzecwiczenia {
          return true;
          } else return false;
     }
+
+/*   Zad 5
+    Stwórz koszyk z produktami. Bedzie on służył przechowywaniu zamówienia.
+        a) Stwórz klase Produkt. Klasa powinna posiadac pola: Nazwa oraz cena. W klasie tej powinny być settery i gettery do wszystkich pól
+        Powinna tutaj być także metoda cenaBrutto, któa przemnoży cenę netto na podatek VAT.
+        Przyjmijmy, że zyjemy w prostym i przyjemnym podatkowo kraju i każdy produkt ma podatek VAT 8%.
+
+        b) Stwórz klasę Rachunek, która będzie posiadała pole, które będzie przetrzymywała produkty (tablica/lista).
+        Klasa powinna posiadać instancyjną metodę pozwalającą na dodawanie produktów, a także metodę sumującą całą cenę na rachunku -
+        netto oraz brutto (to dwi różne metody).
+        Klasa powinna mieć takżę metodę pozwalającą zwrócić VAT czyli różnicę mięczy brtto i netto.
+
+
+ */
+
+
+
 }
