@@ -38,6 +38,8 @@ public class TimeAndData {
 
         dodajDni(50, LocalDate.now());
 
+        System.out.println(0%2);
+
 
 
 

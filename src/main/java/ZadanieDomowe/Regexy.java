@@ -95,7 +95,7 @@ public class Regexy {
 //    * Tak wiem, że mogą być zdania "jednosłowne
 
     public static boolean isSentence (String sentence){
-        Pattern pattern = Pattern.compile("[A-Z]{1}\\w+(\\s\\w+)*\\.");
+        Pattern pattern = Pattern.compile("[A-Z]{1}\\w*(\\n\\w+)*\\.");
         Matcher matcher = pattern.matcher(sentence);
         return matcher.matches();
 
