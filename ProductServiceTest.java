@@ -10,30 +10,47 @@ import static enumy.zadanie.ProductType.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductServiceTest {
+    private Product porzeczka;
+    private Product arbuz;
+    private Product jablo;
+    private Product szynka;
+    private Product ogorek;
+    private ProductService productService;
+    private List <Product> listaProduktów;
+    private List <Product> listaOwocow;
 
     @BeforeEach
     void setUp() {
 
-        List <Product> listaOwoców;
+        porzeczka = new Product("Porzeczka", 1.78, 0.5, OWOCE);
+        arbuz = new Product("Arbuz", 1.78, 0.5, OWOCE);
+        jablo = new Product("jablko", 1.78, 0.5, OWOCE);
+        szynka = new Product("Wędlina", 0.256, 0.1, MIESO );
+        ogorek = new Product("Zielony", 5,0.1,WARZYWA);
+        productService = new ProductService();
+        listaProduktów = new LinkedList<>();
+        listaOwocow = new LinkedList<>();
+        listaProduktów.add(szynka);
+        listaProduktów.add(arbuz);
+        listaProduktów.add(porzeczka);
+        listaProduktów.add(ogorek);
+        listaProduktów.add(jablo);
+        listaOwocow = productService.retrieveFruits(listaProduktów);
 
     }
 
+// Czy można robić kilka testów w jednym?
     @Test
     void retrieveFruitsCzyTworzyListę() {
-        Product porzeczka = new Product("Porzeczka", 1.78, 0.5, OWOCE);
-        Product szynka = new Product("Wędlina", 0.256, 0.1, MIESO );
-        Product ogorek = new Product("Zielony", 5,0.1,WARZYWA);
-        ProductService productService = new ProductService();
-        List <Product> listaProduktów = new LinkedList<>();
-        List <Product> listaOwocow = new LinkedList<>();
-        listaProduktów.add(porzeczka);
-        listaProduktów.add(szynka);
-        listaProduktów.add(ogorek);
-        listaOwocow = productService.retrieveFruits(listaProduktów);
+//        Oba testy sprawdzaja w zasadzie to samo.
         assertNotNull(listaOwocow);
         assertFalse(listaOwocow.isEmpty());
+    }
 
+    @Test
+    void retrieveFruitCzyTworzyListęSamychOwoców(){
         assertEquals(listaOwocow.get(0).getProductType(), OWOCE);
+        assertEquals(listaOwocow.get(1).getProductType(), OWOCE);
     }
 
 }
