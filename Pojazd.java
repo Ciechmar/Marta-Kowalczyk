@@ -6,12 +6,21 @@ public abstract class Pojazd {
     private String rejestracja;
     private String vin;
     private String kolor;
+    private String typ;
     private int cena;
     private double spalanie; // na 100km
     private double stanZbiornikaPaliwa; //w litrach
     private double licznikKilometrów;
     private boolean czyWypożyczony;
     private LocalDate dataWypozyczenia;
+    private int iloscDniWypozyczenia;
+
+    public Pojazd(String rejestracja, String vin, String kolor, double spalanie) {
+        this.rejestracja = rejestracja;
+        this.vin = vin;
+        this.kolor = kolor;
+        this.spalanie = spalanie;
+    }
 
     public boolean isCzyWypożyczony() {
         return czyWypożyczony;
@@ -37,18 +46,8 @@ public abstract class Pojazd {
         this.iloscDniWypozyczenia = iloscDniWypozyczenia;
     }
 
-    private int iloscDniWypozyczenia;
-
-    public void setCena(int cena) {
-        this.cena = cena;
-    }
-
-    public void setStanZbiornikaPaliwa(double stanZbiornikaPaliwa) {
-        this.stanZbiornikaPaliwa = stanZbiornikaPaliwa;
-    }
-
-    public void setLicznikKilometrów(double licznikKilometrów) {
-        this.licznikKilometrów = licznikKilometrów;
+    public String getTyp() {
+        return typ;
     }
 
     public String getRejestracja() {
@@ -67,22 +66,40 @@ public abstract class Pojazd {
         return cena;
     }
 
-    public double getSpalanie() {
-        return spalanie;
+    public void setCena(int cena) {
+        this.cena = cena;
     }
 
-    public Pojazd(String rejestracja, String vin, String kolor, double spalanie) {
-        this.rejestracja = rejestracja;
-        this.vin = vin;
-        this.kolor = kolor;
-        this.spalanie = spalanie;
+    public double getSpalanie() {
+        return spalanie;
     }
 
     public double getStanZbiornikaPaliwa() {
         return stanZbiornikaPaliwa;
     }
 
+    public void setStanZbiornikaPaliwa(double stanZbiornikaPaliwa) {
+        this.stanZbiornikaPaliwa = stanZbiornikaPaliwa;
+    }
+
     public double getLicznikKilometrów() {
         return licznikKilometrów;
+    }
+
+    public void setLicznikKilometrów(double licznikKilometrów) {
+        this.licznikKilometrów = licznikKilometrów;
+    }
+
+    @Override
+    public String toString() {
+        return "Pojazd[" +
+                "rejestracja = " + rejestracja + '\'' +
+                ", kolor = " + kolor + '\'' +
+                ", cena = " + cena +
+                ", spalanie = " + spalanie +
+                ", stanZbiornikaPaliwa = " + stanZbiornikaPaliwa +
+                ", licznikKilometrów = " + licznikKilometrów +
+                ", czyWypożyczony = " + czyWypożyczony +
+                ']';
     }
 }
