@@ -1,49 +1,84 @@
-package zadaniaDomowe.wypożyczalnia;
+package zadaniaDomowe.kolekcje;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
+/*
+1.Utwórz listę liczb całkowitych: 1,2,2,2,4,5,13,3,2,1,1,18,37,31.1.
+Wypisz listę razem z pozycją zajmowaną na liście
+1.2.Posortuj listę i wypisz elementy znajdujące się w liście.
+1.3.Znajdź największy i najmniejszy element listy
+1.4.Sprawdź rozmiar listy i go wypisz
+1.5.Utwórz zbiór(Set) liczb całkowitych i dodaj niego utworzoną wcześniej listę.
+Sprawdź teraz rozmiar zbioru. Czy wiesz z czego wynika różnica między rozmiarem listy i  zbioru?
+1.6.Wypisz listę oraz zbiór używając pętli.
+ */
 
 public class App {
     public static void main(String[] args) {
-        Osobowe osobowe1 = new Osobowe("GD 1234", "WIN345fmki98ujhhy", "Czerwony", 5.8);
-        Osobowe osobowe2 = new Osobowe("GD 3255", "WIN234567890oikjj", "Fioletowy", 5.3);
-        Osobowe osobowe3 = new Osobowe("GD 1478", "WIN345lfk5kfogj5v", "Żółty", 4.8);
-        Osobowe osobowe4 = new Osobowe("GD 9514", "WIN345f92j6k1l3d4", "Czerwony", 6.1);
-        Osobowe osobowe5 = new Osobowe("GD 3578", "WINter64te64ys3d4", "Czarny", 5.1);
-        Osobowe osobowe6 = new Osobowe("GD 8523", "WIN34j58fj49thdd4", "Czarny", 5.0);
-        Osobowe osobowe7 = new Osobowe("GD 3258", "WIN345nfier94875j", "Czerwony", 4.5);
+        List listaNumerów = Arrays.asList(1, 2, 2, -2, 4, 5, 13, 3, 2, 1, 1, 18, 37, 3);
 
-        Motocykl motor1 = new Motocykl ("GD 8765", "WINivn39frnd9oen", "Niebieski", 3.3);
-        Motocykl motor2 = new Motocykl ("GD 8457", "WINiv3456yuthgfn", "Czarny", 3.0);
-        Motocykl motor3 = new Motocykl ("GD 8766", "WINivn3mkjuy7643", "Brązowy", 2.3);
+        wyświetlListę(listaNumerów);
+        System.out.println("Posortowana lista:");
+        wyświetlListę(posortujListę(listaNumerów));
+        maxiMin(listaNumerów);
+        System.out.println("Rozmiar listy to: " + listaNumerów.size());
+        wyświetlListę(wpiszListeDoZbioru(listaNumerów));
+        System.out.println("Rozmiar zbioru to: "+wpiszListeDoZbioru(listaNumerów).size() + ", bo powtórki zostały nadpisane.");
 
 
 
-        //        osobowe1.setStanZbiornikaPaliwa(25);
-        List <Pojazd> pojazds = new ArrayList<>();
-        pojazds.add(osobowe1);
-        pojazds.add(osobowe2);
-        pojazds.add(osobowe3);
-        pojazds.add(osobowe4);
-        pojazds.add(osobowe5);
-        pojazds.add(osobowe6);
-        pojazds.add(osobowe7);
-        pojazds.add(motor1);
-        pojazds.add(motor2);
-        pojazds.add(motor3);
-//        Util util = new Util();
-//        System.out.printf("Samochód o rejestracji : %s  ma %.1f l w baku i przejedzie : %.2f km", pojazds.getRejestracja(), pojazds.getStanZbiornikaPaliwa(),util.IleKilometrówPrzejedzie(pojazds));
+    }
 
-        Wypożyczalnia wypożyczalnia = new Wypożyczalnia();
-        wypożyczalnia.wypozycz(osobowe1,10);
-        wypożyczalnia.wypozycz(osobowe1,10);
+    private static List<Integer> posortujListę(List<Integer> lista) {
+        List<Integer> listaNumerowPosortowana = new ArrayList<>();
+        Map<Integer, Integer> mapa = new HashMap<>();
+        int i = 0;
+        for (Integer integer : lista) {
+            mapa.put(i, integer);
+            i++;
+        }
+        for (Integer key : mapa.keySet()) {
+            listaNumerowPosortowana.add(mapa.get(key));
+        }
+        return listaNumerowPosortowana;
+    }
 
-        System.out.println(osobowe1.getTyp());
+    private static void wyświetlListę(List lista) {
 
-        wypożyczalnia.wyszukaj(pojazds);
+        int i = 1;
+        for (Object o : lista) {
+            System.out.println(i + " : " + o);
+            i++;
+        }
 
+    }
 
+    private static void wyświetlListę(Set set) {
 
+        int i = 1;
+        for (Object o : set) {
+            System.out.println(i + " : " + o);
+            i++;
+        }
 
+    }
+
+    private static void maxiMin(List<Integer> lista) {
+        int max = lista.get(0);
+        int min = lista.get(0);
+        for (Integer integer : lista) {
+            if (integer > max) max = integer;
+            if (integer < min) min = integer;
+        }
+        System.out.println("Max to: " + max + " Min to: " + min);
+    }
+
+    private static Set wpiszListeDoZbioru (List<Integer> lista){
+        Set <Integer> zbiorZListy = new HashSet<>();
+        for (Integer integer : lista) {
+            zbiorZListy.add(integer);
+
+        }
+        return zbiorZListy;
     }
 }
